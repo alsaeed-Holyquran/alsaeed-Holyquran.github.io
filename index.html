@@ -108,10 +108,26 @@
         .social-row a { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.5rem; text-decoration: none; transition: 0.3s; }
         .social-row a:hover { background: var(--gold); color: var(--dark-brown); }
 
-        .panel { padding: 0 20px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion { background-color: var(--white); cursor: pointer; padding: 20px; width: 100%; text-align: right; border: none; outline: none; transition: 0.4s; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;}
-
-        @media (max-width: 768px) { .analytics-flex { flex-direction: column; } .top-bar { padding: 10px; } .logo-img { width: 60px; height: 60px; } }
+        /* تعديلات ذكية للموبايل */
+        @media (max-width: 768px) {
+            .analytics-flex { flex-direction: column; }
+            .top-bar { flex-direction: row; padding: 10px 2%; justify-content: space-between; align-items: center;}
+            .logo-container { gap: 8px; }
+            .logo-img { width: 45px; height: 45px; border-width: 1px;}
+            .logo-text { font-size: 0.65rem; line-height: 1.3; }
+            header h1 { font-size: 2.2rem !important; }
+            header p { font-size: 1.1rem !important; }
+            .stats-bar { gap: 20px; padding: 20px 5%; width: 95%; margin-top: -30px;}
+            .stat-item { min-width: 120px; }
+            .stat-number-wrapper { font-size: 2.2rem; }
+            section { padding: 50px 5%; }
+            .masonry-gallery { column-count: 2; }
+        }
+        @media (max-width: 480px) {
+             .logo-text { font-size: 0.55rem; }
+             .logo-img { width: 35px; height: 35px; }
+             .masonry-gallery { column-count: 1; }
+        }
     </style>
 </head>
 <body>
@@ -135,7 +151,7 @@
         <p style="font-size: 1.3rem; margin: 20px 0; line-height: 1.8;">تتبع الجمعية الشرعية لتعاون العاملين بالكتاب والسنة المحمدية <br> محافظة بني سويف - قطاع ببا - فرع قمبش الحمراء</p>
         <div style="max-width: 800px; margin: 40px auto;">
             <div class="video-box">
-                <video src="24.mp4" autoplay muted loop controls playsinline></video>
+                <video src="24.mp4" preload="metadata" autoplay muted loop controls playsinline></video>
             </div>
             <p style="margin-top: 15px; font-style: italic;">فضيلة المشرف العام للجمعيات الشرعية بمحافظة بني سويف</p>
         </div>
@@ -202,7 +218,7 @@
         <h2 class="section-title">مشروع السرد القرآني</h2>
         <div class="card" style="max-width: 1000px; margin: 0 auto; text-align: center;">
             <div class="video-box" style="max-width: 800px; margin: 0 auto 30px auto;">
-                <video src="21.mp4" autoplay muted loop playsinline controls></video>
+                <video src="21.mp4" preload="metadata" autoplay muted loop playsinline controls></video>
             </div>
             <div class="grid-container">
                 <div class="img-wrapper"><img src="17.JPG" alt="كواليس السرد" class="actual-img"></div>
@@ -211,7 +227,6 @@
         </div>
     </section>
 
-    <!-- تم إعادة قسم معرض الصور والفيديوهات هنا بنجاح -->
     <section id="gallery" style="background: #fff;">
         <h2 class="section-title">معرض الصور والفيديوهات</h2>
         <div class="masonry-gallery">
@@ -219,7 +234,7 @@
             <div class="gallery-item"><img src="105.jpg" alt="صورة 2"></div>
             <div class="gallery-item">
                 <div class="video-box" style="padding-bottom: 100%; border:none; border-radius: 5px;">
-                    <video src="31.mp4" autoplay muted loop playsinline controls style="object-fit: cover;"></video>
+                    <video src="31.mp4" preload="metadata" autoplay muted loop playsinline controls style="object-fit: cover;"></video>
                 </div>
             </div>
             <div class="gallery-item"><img src="102.jpg" alt="صورة 3"></div>
