@@ -249,9 +249,9 @@
             <div class="analytics-text">
                 <h3 style="color: var(--dark-brown); margin-bottom: 25px; border-right: 5px solid var(--gold); padding-right: 15px;">تقرير الحصاد لـ <span class="highlight-num">700</span> طالب:</h3>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 20px; background: #fafafa; padding: 15px; border-radius: 10px;">تتم مراجعة <span class="highlight-num" id="txt-review">0</span> جزء <br><small>(بمعدل جزء أسبوعياً لكل طالب)</small></li>
-                    <li style="margin-bottom: 20px; background: #fafafa; padding: 15px; border-radius: 10px;">ساعات مسار التحفيظ: <span class="highlight-num" id="txt-tahfeez">0</span> ساعة عمل</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid var(--gold); background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 10px;">ساعات اللقاء التربوي: <span class="highlight-num" id="txt-tarbawi">0</span> ساعة</li>
+                    <li style="margin-bottom: 20px; background: #fafafa; padding: 15px; border-radius: 10px;">تتم مراجعة <span class="highlight-num counter" data-target="2800">0</span> جزء <br><small>(بمعدل جزء أسبوعياً لكل طالب)</small></li>
+                    <li style="margin-bottom: 20px; background: #fafafa; padding: 15px; border-radius: 10px;">ساعات مسار التحفيظ: <span class="highlight-num counter" data-target="1200">0</span> ساعة عمل</li>
+                    <li style="margin-bottom: 20px; border-right: 4px solid var(--gold); background: rgba(212, 175, 55, 0.05); padding: 15px; border-radius: 10px;">ساعات اللقاء التربوي: <span class="highlight-num counter" data-target="100">0</span> ساعة</li>
                 </ul>
             </div>
             <div class="analytics-chart">
@@ -378,9 +378,6 @@
                     plugins: { tooltip: { callbacks: { label: (i) => i.label + ": " + (i.dataIndex === 2 ? 100 : i.raw).toLocaleString() } } }
                 }
             });
-            document.getElementById('txt-review').innerText = '2,800';
-            document.getElementById('txt-tahfeez').innerText = '1,200';
-            document.getElementById('txt-tarbawi').innerText = '100';
         });
 
         // Quiz
